@@ -1,0 +1,8 @@
+.all {
+    height: 50px;
+    border: 1px blue solid;
+}
+
+.selected {
+    background-color: green;
+}

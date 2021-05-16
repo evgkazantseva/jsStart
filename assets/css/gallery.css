@@ -1,0 +1,15 @@
+.img {
+    border: 1px green solid;
+    width: 30%;
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.photos {
+    display: flex;
+    height: 80vh;
+    justify-content: space-between;
+}
