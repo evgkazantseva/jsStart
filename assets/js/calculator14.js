@@ -7,17 +7,15 @@ function calculate(operation) {
             break;
         case '-':
             c = a - b;
-
             break;
         case '*':
             c = a * b;
-
             break;
         case '/':
             if (b == 0 && a == 0) {
                 c = `Поздравляю, вы получили неопределенность!`;
             } else if (b == 0) {
-                c = `Поздравляю, вы получили бесконечность!`;
+                c = `Ай-ай-ай, на ноль делить нельзя!`;
             } else {
                 c = a / b;
             }
