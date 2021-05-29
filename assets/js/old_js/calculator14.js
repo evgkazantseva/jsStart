@@ -1,6 +1,8 @@
+let a = Number(document.getElementById('first').value);
+let b = Number(document.getElementById('second').value);
+
 function calculate(operation) {
-    let a = Number(document.getElementById('first').value);
-    let b = Number(document.getElementById('second').value);
+    
     switch (operation) {
         case '+':
             c = a + b;
@@ -21,5 +23,7 @@ function calculate(operation) {
             }
             break;
     }
-    document.getElementById('result').value = c;
-}
+	return c;
+    }
+	
+	document.getElementById('result').value = c;
