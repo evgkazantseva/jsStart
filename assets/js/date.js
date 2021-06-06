@@ -2,7 +2,7 @@ function generateDate() {
     document.getElementById("result").innerHTML = "";
     let date = getDatefrom();
     if (isNaN(date) || (Date.now() - date) < 0) {
-        document.getElementById("result").innerHTML = `Please,enter right date format`;
+        document.getElementById("result").innerHTML = `Please,enter right date format: 2021-06-06T15:51:50`;
     } else if ((Date.now() - date) / 1000 < 1) {
         document.getElementById("result").innerHTML = `Прямо сейчас`;
     } else if ((Date.now() - date) / 1000 < 60) {
