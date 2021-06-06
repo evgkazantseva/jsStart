@@ -28,7 +28,12 @@ function printFIO(sirname, name, middlename) {
 function getFIO() {
     return document.getElementById('FIO').value;
 }
-//альтернативный вариант
+
+function check(str) {
+    return str == "" ? "" : str[0].toUpperCase() + str.toLowerCase().slice(1);
+}
+
+//альтернативный вариант решения без использования массивов
 function parseFIO2() {
     let FIO = getFIO().trim();
     document.getElementById('nameError').innerText = "";
@@ -46,6 +51,3 @@ function parseFIO2() {
     }
 }
 
-function check(str) {
-    return str == "" ? "" : str[0].toUpperCase() + str.toLowerCase().slice(1);
-}
