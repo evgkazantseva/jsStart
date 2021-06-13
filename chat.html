@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+
+    <link rel="stylesheet" href="assets/css/chat.css">
+</head>
+
+<body>
+    <h1>Чатик</h1>
+    <div id="chat"></div>
+    <form>
+        <div>
+            <label for="login">Логин*:</label>
+        </div>
+        <div>
+            <input type="text" id="login" size=50>
+        </div>
+        <div id="loginError" class="error"></div>
+        <div>
+            <label for="avatar">Ссылка на картинку для аватара*: </label>
+        </div>
+        <div>
+            <input type="url" id="avatar" size=50>
+        </div>
+        <div id="fileError" class="error"></div>
+        <div>
+            <label for="message">Сообщение*: </div>
+        <div>
+            <textarea id="message" name="message" rows="5" cols="50"></textarea>
+        </div>
+        <div id="messageError" class="error"></div>
+        <input type="button" name="button" value="Отправить" onClick="send();"></input>
+    </form>
+    <script src="assets/js/chat.js"></script>
+</body>
+
+</html>

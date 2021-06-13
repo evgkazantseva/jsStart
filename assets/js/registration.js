@@ -4,6 +4,8 @@ function check() {
     let password = document.getElementById("password");
     let repeatPassword = document.getElementById("repeatPassword");
     let agreeOferta = document.getElementById("oferta");
+    let regexpPassword = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/;
+    let regexpLogin = /^[a-z0-9_-]{3,16}$/;
 
     document.getElementById("nameError").innerHTML = "";
     document.getElementById("loginError").innerHTML = "";
@@ -18,12 +20,14 @@ function check() {
 
     if (login.value == '') {
         document.getElementById("loginError").innerHTML = "Please,enter your login";
+    } else if (!regexpLogin.test(login.value)) {
+        document.getElementById("loginError").innerHTML += "Login is incorrect";
     }
 
     if (password.value == '') {
         document.getElementById("passwordError").innerHTML = "Please,enter your password";
-    } else if (password.value.length < 8) {
-        document.getElementById("passwordError").innerHTML += "Password must be at least 8 characters";
+    } else if (!regexpPassword.test(password.value)) {
+        document.getElementById("passwordError").innerHTML += "Password is too simple";
     }
 
     if (repeatPassword.value == '') {

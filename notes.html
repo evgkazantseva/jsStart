@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+
+    <link rel="stylesheet" href="assets/css/notes.css">
+</head>
+
+<body>
+    <h1>Мои заметки</h1>
+    <form>
+        <div>
+            <label for="key">Ключ заметки*: </div>
+        <div>
+            <input id="key" name="key">
+        </div>
+        <div>
+            <label for="message">Текст заметки*: </div>
+        <div>
+            <textarea id="message" name="message" rows="5" cols="50"></textarea>
+        </div>
+        <div id="messageError" class="error"></div>
+        <input type="button" name="button" value="Отправить" onClick="send();"></input>
+        <div id="notes"></div>
+    </form>
+    <script src="assets/js/notes.js"></script>
+</body>
+
+</html>

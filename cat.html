@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш питомец</title>
+</head>
+
+<body>
+    <h1 style="font-family: cursive;">Регистрация питомца</h1>
+    <form>
+        <fieldset style="line-height: 25px;">
+            <legend>Данные о владельце</legend>
+            <div>
+                <label for="ownername">Имя владельца*:</label>
+                <input type="text" id="ownername" required />
+            </div>
+            <div>
+                <label for="contacts">Контакты владельца*:</label>
+                <input type="email" id="email" placeholder="Ваш e-mail" required />
+            </div>
+        </fieldset>
+        <fieldset style="line-height: 25px;">
+            <legend>Данные о питомце</legend>
+            <div>
+                <label for="catname">Кличка животного*:</label>
+                <input type="text" id="catname" required />
+            </div>
+            <div>
+                <label for="catage">Возвраст животного*:</label>
+                <input type="number" id="catage" min="0" max="50" required />
+            </div>
+            <div>
+                <label for="species">Порода:</label>
+                <select id="species">
+                    <option selected value="No">Не выбран</option>
+                    <option value="Pers">Персидская</option>
+                    <option value="Tay">Тайская</option>
+                    <option value="Sib">Сибирская</option>
+                </select>
+            </div>
+            <div>
+                <label>Пол животного*:</label><br>
+                <label><input type="radio" id="sex1" name="sex" value="male" required /> Самец</label><br>
+                <label><input type="radio" id="sex2" name="sex" value="female" required /> Самка</label><br>
+            </div>
+            <div>
+                <label>Тип питания:</label><br>
+                <label><input type="checkbox" id="food1" name="food" value="dry" />
+                    Сухой корм</label><br />
+                <label><input type="checkbox" id="food2" name="food" value="vet" />
+                    Влажный корм</label> <br />
+                <label><input type="checkbox" id="food3" name="food" value="natural" />
+                    Натуральный корм </label><br />
+            </div>
+            <div>
+                <label for="comments">Ваш комментарий:</label> <br>
+                <textarea id="comments" rows="5" cols="30">Ваш комментарий</textarea>
+            </div>
+            <div>
+                <label for="catphoto">Фото питомца</label>
+                <input type="file" id="catphoto" />
+            </div>
+        </fieldset>
+        <div>
+            <p><button id="save">Сохранить</button>
+                <button id="close">Отменить</button>
+            </p>
+        </div>
+
+    </form>
+</body>
+
+</html>

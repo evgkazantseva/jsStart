@@ -1,0 +1,12 @@
+.avatar {
+    width: 50px;
+}
+
+.error {
+    color: red;
+    font-size: smaller;
+}
+
+.login {
+    color: green;
+}
