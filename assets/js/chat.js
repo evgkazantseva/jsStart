@@ -67,9 +67,6 @@ function checkSpam(message) {
     return newMessage;
 }
 
-function printChatHistory(login, avatar, comments) {
-
-};
 
 function printMessage(avatar, login, message) {
 
