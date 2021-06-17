@@ -11,7 +11,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             <button id="removeAllButton" onClick="remove('${key}');">Удалить</button><br></div>`;
             }
         }
-        document.getElementById('notesList').innerHTML += `<div><button id="removeAllButton" onClick="removeAll();">Удалить все</button></div>`;
+        if (document.getElementById('notesList').innerHTML != "") {
+            document.getElementById('notesList').innerHTML += `<div><button id="removeAllButton" onClick="removeAll();">Удалить все</button>
+        </div>`;
+        } else {
+            document.getElementById('notesList').innerHTML = `У вас нет заметок`;
+        }
     };
 });
 
