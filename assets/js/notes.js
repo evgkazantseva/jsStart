@@ -1,25 +1,46 @@
+document.addEventListener("DOMContentLoaded", function (event) {
+    if (localStorage.length == 0) {
+        document.getElementById('notesList').innerHTML = `У вас нет заметок`;
+    } else {
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            regexp = /^note/;
+            if (regexp.test(key)) {
+                let note = localStorage.getItem(key);
+                document.getElementById('notesList').innerHTML += `Заметка:${note}<br>
+            <button id="removeAllButton" onClick="remove('${key}');">Удалить</button><br></div>`;
+            }
+        }
+        document.getElementById('notesList').innerHTML += `<div><button id="removeAllButton" onClick="removeAll();">Удалить все</button></div>`;
+    };
+});
+
 
 function send() {
     let message = getMessage();
     let key = getKey();
-    let regexpKey = /[^A-Za-z0-9]/;
+    if (check()) {
+        localStorage.setItem(key, message);
+        window.location.reload();
+    }
+}
+
+function check() {
+    let message = getMessage();
+    let key = getKey();
+    let regexpKey = /[^A-Za-z]/;
+
     document.getElementById('messageError').innerHTML = "";
-    let errorCount = 0;
-    if (message == "" || key == "") {
-        document.getElementById('messageError').innerHTML += 'Не введен ключ или текст заметки<br>';
-        errorCount += 1;
+    if (message == "") {
+        document.getElementById('messageError').innerHTML += 'Не введен текст заметки<br>';
+        return false;
     };
-    if (regexpKey.test(key)) {
-        document.getElementById('messageError').innerHTML += 'Ключ заметки введен неверно<br>';
-        errorCount += 1;
-    };
+
     if (localStorage.getItem(key) != null) {
         document.getElementById('messageError').innerHTML += 'Заметка с таким ключом уже есть<br>';
-        errorCount += 1;
+        return false;
     };
-    if (errorCount == 0) {
-        localStorage.setItem(key, message);
-    }
+    return true;
 }
 
 function getMessage() {
@@ -27,6 +48,15 @@ function getMessage() {
 }
 
 function getKey() {
-    return document.getElementById('key').value;
+    return 'note' + Date.now();
 }
 
+function removeAll() {
+    localStorage.clear();
+    window.location.reload();
+}
+
+function remove(key) {
+    localStorage.removeItem(key);
+    window.location.reload();
+}

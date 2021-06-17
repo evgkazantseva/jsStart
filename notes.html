@@ -12,19 +12,21 @@
 
 <body>
     <h1>Мои заметки</h1>
+    <div id="notesList"></div>
     <form>
-        <div>
+        <!--<div>
             <label for="key">Ключ заметки*: </div>
         <div>
             <input id="key" name="key">
-        </div>
+        </div> -->
         <div>
             <label for="message">Текст заметки*: </div>
         <div>
             <textarea id="message" name="message" rows="5" cols="50"></textarea>
         </div>
         <div id="messageError" class="error"></div>
-        <input type="button" name="button" value="Отправить" onClick="send();"></input>
+        <button id="button" type="button" onClick="send();">Отправить</button>
+
         <div id="notes"></div>
     </form>
     <script src="assets/js/notes.js"></script>
