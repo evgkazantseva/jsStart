@@ -61,15 +61,12 @@ function checkNotEmpty(login, avatar, message) {
     return true;
 }
 
-
 function checkSpam(message) {
     newMessage = message.replace(/viagra|xxx/gi, "***");
     return newMessage;
 }
 
-
 function printMessage(avatar, login, message) {
-
     document.getElementById('chat').innerHTML += `<div><img src="${avatar}" class="avatar"></img><div class='login'>${login}</div><div>${message}</div></div>`;
 }
 

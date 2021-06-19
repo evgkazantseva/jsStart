@@ -34,8 +34,8 @@
             <div>
                 <label for="species">Порода:</label>
                 <select id="species">
-                    <option selected value="No">Не выбран</option>
-                    <option value="Pers">Персидская</option>
+                    <!-- <option selected value="No">Не выбран</option> -->
+                    <option value="Pers" selected>Персидская</option>
                     <option value="Tay">Тайская</option>
                     <option value="Sib">Сибирская</option>
                 </select>
@@ -64,12 +64,13 @@
             </div>
         </fieldset>
         <div>
-            <p><button id="save">Сохранить</button>
+            <p><button id="save" type="button" onclick="logCatObject()">Сохранить</button>
                 <button id="close">Отменить</button>
             </p>
         </div>
 
     </form>
+    <script src="assets/js/cat.js"></script>
 </body>
 
 </html>
